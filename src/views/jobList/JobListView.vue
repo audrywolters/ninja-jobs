@@ -11,12 +11,14 @@
 export default {
     data() {
         return {
-            jobList: [
-                { title: 'Ninja UX Designer', id: 1, details: 'lorem' },
-                { title: 'Ninja Web Developer', id: 2, details: 'lorem' },
-                { title: 'Ninja Vue Developer', id: 3, details: 'lorem' }
-            ]
+            jobList: []
         }
+    },
+    mounted() {
+      fetch('http://localhost:3000/jobList')
+        .then(res => res.json())
+        .then(data => this.jobList = data)
+        .catch(err => console.log(err.message))
     }
 }
 </script>
