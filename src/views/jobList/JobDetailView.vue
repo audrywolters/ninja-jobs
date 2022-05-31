@@ -5,11 +5,13 @@
 
 <script>
 export default {
-    data() {
-        return {
-            id: this.$route.params.id
-        }
-    }
+    props: ['id']
+    // props replaces data (make sure to set props: true in index)
+    // data() {
+    //     return {
+    //         id: this.$route.params.id
+    //     }
+    // }
 }
 </script>
 
